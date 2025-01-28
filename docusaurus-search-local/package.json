@@ -1,6 +1,6 @@
 {
   "name": "@wayneferrao/docusaurus-search-local",
-  "version": "1.0.2",
+  "version": "0.48.4",
   "description": "An offline/local search plugin for Docusaurus v3",
   "repository": {
     "type": "git",
