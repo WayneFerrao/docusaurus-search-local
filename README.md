@@ -1,12 +1,13 @@
-# @easyops-cn/docusaurus-search-local
+# @wayneferrao/docusaurus-search-local
 
-[![Npm Version](https://img.shields.io/npm/v/@easyops-cn/docusaurus-search-local)](https://www.npmjs.com/package/@easyops-cn/docusaurus-search-local)
+[![Npm Version](https://img.shields.io/npm/v/@wayneferrao/docusaurus-search-local)](https://www.npmjs.com/package/@wayneferrao/docusaurus-search-local)
 [![CI Status](https://github.com/easyops-cn/docusaurus-search-local/workflows/gh-pages/badge.svg?event=push&branch=master)](https://github.com/easyops-cn/docusaurus-search-local/actions?query=workflow%3Agh-pages)
 [![Coverage Status](https://coveralls.io/repos/github/easyops-cn/docusaurus-search-local/badge.svg?branch=master)](https://coveralls.io/github/easyops-cn/docusaurus-search-local?branch=master)
 
 An offline/local search plugin/theme for [Docusaurus v2/v3](https://docusaurus.io/), which supports multiple languages, especially optimized for language of zh.
 
 > Originally forked from [cmfcmf/docusaurus-search-local](https://github.com/cmfcmf/docusaurus-search-local).
+This package was forked to remove the search suggestions due to accessibility bugs. Users are now taken directly to the search results page.
 >
 > Then later fully rewritten with TypeScript 💪, styles polished 💅, language of Chinese supported 🇨🇳, and tests covered ✅.
 
@@ -33,14 +34,14 @@ https://easyops-cn.github.io/docusaurus-search-local/
 ## Installation
 
 ```shell
-npm install --save @easyops-cn/docusaurus-search-local
+npm install --save @wayneferrao/docusaurus-search-local
 # or
-yarn add @easyops-cn/docusaurus-search-local
+yarn add @wayneferrao/docusaurus-search-local
 ```
 
 ## Usage
 
-Add `@easyops-cn/docusaurus-search-local` into your docusaurus themes.
+Add `@wayneferrao/docusaurus-search-local` into your docusaurus themes.
 
 ````js
 // In your `docusaurus.config.js`:
@@ -49,8 +50,8 @@ module.exports = {
   themes: [
     // ... Your other themes.
     [
-      require.resolve("@easyops-cn/docusaurus-search-local"),
-      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      require.resolve("@wayneferrao/docusaurus-search-local"),
+      /** @type {import("@wayneferrao/docusaurus-search-local").PluginOptions} */
       ({
         // ... Your options.
         // `hashed` is recommended as long-term-cache of index file is possible.
@@ -179,13 +180,13 @@ In case some specific errors occurred:
 
 - `Error: Cannot mix different versions of joi schemas`:
 
-  - Try using @easyops-cn/docusaurus-search-local >= v0.16.0 with Docusaurus >= v2.0.0-alpha.73
-  - Try using @easyops-cn/docusaurus-search-local between v0.14.0 and v0.15.1 with Docusaurus between v2.0.0-alpha.68 and v2.0.0-alpha.72
-  - Or try using @easyops-cn/docusaurus-search-local <= v0.13.1 with Docusaurus <= v2.0.0-alpha.66
+  - Try using @wayneferrao/docusaurus-search-local >= v0.16.0 with Docusaurus >= v2.0.0-alpha.73
+  - Try using @wayneferrao/docusaurus-search-local between v0.14.0 and v0.15.1 with Docusaurus between v2.0.0-alpha.68 and v2.0.0-alpha.72
+  - Or try using @wayneferrao/docusaurus-search-local <= v0.13.1 with Docusaurus <= v2.0.0-alpha.66
 
 - `Module not found: Error: Can't resolve '@docusaurus/useRouteContext'`:
-  - Try using @easyops-cn/docusaurus-search-local >= v0.25.0 with Docusaurus >= v2.0.0-beta.18
-  - Try using @easyops-cn/docusaurus-search-local < v0.25.0 with Docusaurus < v2.0.0-beta.18
+  - Try using @wayneferrao/docusaurus-search-local >= v0.25.0 with Docusaurus >= v2.0.0-beta.18
+  - Try using @wayneferrao/docusaurus-search-local < v0.25.0 with Docusaurus < v2.0.0-beta.18
 
 ## Further Reading
 

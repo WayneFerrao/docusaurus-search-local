@@ -214,7 +214,7 @@ export default function SearchBar({
       if (versionUrl !== baseUrl) {
         if (!versionUrl.startsWith(baseUrl)) {
           throw new Error(
-            `Version url '${versionUrl}' does not start with base url '${baseUrl}', this is a bug of \`@easyops-cn/docusaurus-search-local\`, please report it.`
+            `Version url '${versionUrl}' does not start with base url '${baseUrl}', this is a bug of \`@wayneferrao/docusaurus-search-local\`, please report it.`
           );
         }
         params.set("version", versionUrl.substring(baseUrl.length));
@@ -236,8 +236,8 @@ export default function SearchBar({
       searchBarRef.current,
       {
         hint: false,
-        autoselect: true,
-        openOnFocus: true,
+        autoselect: false,
+        openOnFocus: false,
         cssClasses: {
           root: clsx(styles.searchBar, {
             [styles.searchBarLeft]: searchBarPosition === "left",
@@ -255,18 +255,7 @@ export default function SearchBar({
       },
       [
         {
-          source: async (
-            input: string,
-            callback: (output: SearchResult[]) => void
-          ) => {
-            const result = await searchByWorker(
-              versionUrl,
-              searchContext,
-              input,
-              searchResultLimits
-            );
-            callback(result);
-          },
+          source:  () => [],
           templates: {
             suggestion: SuggestionTemplate,
             empty: EmptyTemplate,
@@ -445,6 +434,20 @@ export default function SearchBar({
     setInputValue("");
     search.current?.autocomplete.setVal("");
   }, [location.pathname, location.search, location.hash, history]);
+
+  searchBarRef.current?.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      const query = searchBarRef.current?.value.trim();
+      if (query) {
+        const params = new URLSearchParams();
+        params.set("q", query);
+  
+        const url = `${baseUrl}search/?${params.toString()}`;
+        history.push(url); // Navigate to the results page.
+      }
+    }  
+  });
 
   return (
     <div

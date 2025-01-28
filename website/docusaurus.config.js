@@ -3,7 +3,7 @@ const buildType = process.env.BUILD_TYPE;
 module.exports = {
   title: "Docusaurus Search",
   tagline:
-    "An offline/local search example using @easyops-cn/docusaurus-search-local",
+    "An offline/local search example using @wayneferrao/docusaurus-search-local",
   url: "https://easyops-cn.github.io",
   baseUrl: buildType === "preview" ? "/" : "/docusaurus-search-local/",
   onBrokenLinks: "throw",
@@ -118,8 +118,8 @@ module.exports = {
   ],
   themes: [
     [
-      "@easyops-cn/docusaurus-search-local",
-      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      "@wayneferrao/docusaurus-search-local",
+      /** @type {import("@wayneferrao/docusaurus-search-local").PluginOptions} */
       ({
         hashed: true,
         language: ["en", "zh"],
